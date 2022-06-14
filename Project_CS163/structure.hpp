@@ -146,6 +146,14 @@ public:
             if (t->right) q.push(t->right);
         }
     }
+
+    TreeNode<T>* search( TreeNode<T>* pRoot, string keyword )
+    {
+        if (!pRoot) return pRoot;
+        if ( keyword == (* (pRoot->pWord)) ) return pRoot;
+        if ( keyword < (*(pRoot->pWord)) ) return search(pRoot->left, keyword);
+        if ( keyword > (*(pRoot->pWord)) ) return search(pRoot->right, keyword);
+    }
     
     ~myDictionary() {
         queue<TreeNode<T>*> q;
