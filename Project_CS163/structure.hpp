@@ -147,7 +147,7 @@ public:
         }
     }
 
-    TreeNode<T>* search( TreeNode<T>* pRoot, string keyword )
+    TreeNode<T>* search( TreeNode<T>* pRoot = root, string keyword )
     {
         if (!pRoot) return pRoot;
         if ( keyword == (* (pRoot->pWord)) ) return pRoot;
